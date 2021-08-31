@@ -374,7 +374,6 @@ assignInNamespace("system", psystem, "base")
 assignInNamespace("system2", psystem, "base")
 assignInNamespace("source", psystem, "base")
 assignInNamespace("library", psystem, "base")
-assignInNamespace("install.packages", psystem, "base")
 
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
