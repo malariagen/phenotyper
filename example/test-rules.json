@@ -1,0 +1,52 @@
+{
+  "drugs":{
+    "Chloroquine":{
+      "rules":[
+        {
+          "name":"Chloroquine-1",
+          "evaluation":"`crt_76[K]` %contains% ','",
+          "phenotype":"Resistant"
+        },
+        {
+          "name":"Chloroquine-2",
+          "evaluation":"`crt_76[K]` %==% '-'",
+          "phenotype":"Undetermined"
+        },
+        {
+          "name":"Chloroquine-3",
+          "evaluation":"`crt_76[K]` %==% 'K'",
+          "phenotype":"Sensitive"
+        },
+        {
+          "name":"Chloroquine-4",
+          "evaluation":"`crt_76[K]` %==% 'T'",
+          "phenotype":"Resistant"
+        },
+        {
+          "name":"Chloroquine-5",
+          "evaluation":"T",
+          "phenotype":"Undetermined"
+        }
+        ]
+    },
+    "Mefloquine":{
+      "rules":[
+        {
+          "name":"Mefloquine-1",
+          "evaluation":"`dup_mdr1` %==% -1",
+          "phenotype":"Undetermined"
+        },
+        {
+          "name":"Mefloquine-2",
+          "evaluation":"`dup_mdr1` %==% 0",
+          "phenotype":"Sensitive"
+        },
+        {
+          "name":"Mefloquine-3",
+          "evaluation":"`dup_mdr1` %==% 1",
+          "phenotype":"Resistant"
+        }
+        ]
+    }
+  }
+}

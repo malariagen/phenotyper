@@ -1,0 +1,285 @@
+{
+   "drugs":{
+      "Chloroquine":{
+         "rules":[
+            {
+               "name":"Chloroquine-1",
+               "change":"76-Het",
+               "evaluation":"`crt_76[K]` %contains% ','",
+               "interpretation":"Undetermined/Het",
+               "phenotype":"Undetermined",
+               "analytics":"Heterozygous mutant"
+            },
+            {
+               "name":"Chloroquine-2",
+               "change":"76-Missing",
+               "evaluation":"`crt_76[K]` %==% '-'",
+               "interpretation":"Undetermined/Missing",
+               "phenotype":"Undetermined",
+               "analytics":"Missing"
+            },
+            {
+               "name":"Chloroquine-3",
+               "change":"K76",
+               "evaluation":"`crt_76[K]` %==% 'K'",
+               "interpretation":"Sensitive/WT",
+               "phenotype":"Sensitive",
+               "analytics":"Wild Type"
+            },
+            {
+               "name":"Chloroquine-4",
+               "change":"76T",
+               "evaluation":"`crt_76[K]` %==% 'T'",
+               "interpretation":"Resistant/Mutant",
+               "phenotype":"Resistant",
+               "analytics":"Mutant"
+            },
+            {
+               "name":"Chloroquine-5",
+               "change":"76-nonT",
+               "evaluation":"T",
+               "interpretation":"Undetermined/UnknownMutant",
+               "phenotype":"Undetermined",
+               "analytics":"Unknown mutant"
+            }
+         ]
+      },
+      "Pyrimethamine":{
+         "rules":[
+            {
+               "name":"Pyrimethamine-1",
+               "change":"108-Het",
+               "evaluation":"`dhfr_108[S]` %contains% ','",
+               "interpretation":"Undetermined/Het",
+               "phenotype":"Undetermined",
+               "analytics":"Heterozygous mutant"
+            },
+            {
+               "name":"Pyrimethamine-2",
+               "change":"108-Missing",
+               "evaluation":"`dhfr_108[S]` %==% '-'",
+               "interpretation":"Undetermined/Missing",
+               "phenotype":"Undetermined",
+               "analytics":"Missing"
+            },
+            {
+               "name":"Pyrimethamine-3",
+               "change":"S108",
+               "evaluation":"`dhfr_108[S]` %==% 'S'",
+               "interpretation":"Sensitive/WT",
+               "phenotype":"Sensitive",
+               "analytics":"Wild Type"
+            },
+            {
+               "name":"Pyrimethamine-4",
+               "change":"108N",
+               "evaluation":"`dhfr_108[S]` %==% 'N'",
+               "interpretation":"Resistant/Mutant",
+               "phenotype":"Resistant",
+               "analytics":"Mutant"
+            },
+            {
+               "name":"Pyrimethamine-5",
+               "change":"108-nonN",
+               "evaluation":"T",
+               "interpretation":"Undetermined/Unknown",
+               "phenotype":"Undetermined",
+               "analytics":"Unknown mutant"
+            }
+         ]
+      },
+      "Sulfadoxine":{
+         "rules":[
+            {
+               "name":"Sulfadoxine-1",
+               "change":"437-Het",
+               "evaluation":"`dhps_437[G]` %contains% ','",
+               "interpretation":"Undetermined/Het",
+               "phenotype":"Undetermined",
+               "analytics":"Heterozygous mutant"
+            },
+            {
+               "name":"Sulfadoxine-2",
+               "change":"437-Missing",
+               "evaluation":"`dhps_437[G]` %==% '-'",
+               "interpretation":"Undetermined/Missing",
+               "phenotype":"Undetermined",
+               "analytics":"Missing"
+            },
+            {
+               "name":"Sulfadoxine-3",
+               "change":"A437",
+               "evaluation":"`dhps_437[G]` %==% 'A'",
+               "interpretation":"Sensitive/WT",
+               "phenotype":"Sensitive",
+               "analytics":"Wild Type"
+            },
+            {
+               "name":"Sulfadoxine-4",
+               "change":"437G",
+               "evaluation":"`dhps_437[G]` %==% 'G'",
+               "interpretation":"Resistant/Mutant",
+               "phenotype":"Resistant",
+               "analytics":"Mutant"
+            },
+            {
+               "name":"Sulfadoxine-5",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"UnknownCombination",
+               "phenotype":"Undetermined",
+               "analytics":"Unknown Mutant"
+            }
+         ]
+      },
+      "Mefloquine":{
+         "rules":[
+            {
+               "name":"Mefloquine-4",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"UnknownCombination",
+               "phenotype":"Undetermined",
+               "analytics":"Unknown Mutant"
+            }
+         ]
+      },
+      "Artemisinin":{
+         "rules":[
+            {
+               "name":"Artemisinin-6",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"Undetermined/MutantNotWHOList",
+               "phenotype":"Undetermined",
+               "analytics":"Mutant - not in WHO list"
+            }
+         ]
+      },
+      "Piperaquine":{
+         "rules":[
+
+            {
+               "name":"Piperaquine-4",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"UnknownCombination",
+               "phenotype":"Undetermined",
+               "analytics":"Unknown Mutant"
+            }
+         ]
+      },
+      "SP":{
+         "rules":[
+            {
+               "name":"S-P-Treatment-1",
+               "change":"dhfr: N51 or C59 or S108",
+               "evaluation":"`dhfr_51[N]` %==% 'N' || `dhfr_59[C]` %==% 'C' || `dhfr_108[S]` %==% 'S'",
+               "interpretation":"Sensitive/NotTripleMutant",
+               "phenotype":"Sensitive",
+               "analytics":"Not triple mutant (at least one allele is WT)"
+            },
+            {
+               "name":"S-P-Treatment-2",
+               "change":"dhfr: 51I + 59R + 108N",
+               "evaluation":"`dhfr_51[N]` %contains% 'I' && `dhfr_59[C]` %contains% 'R' && `dhfr_108[S]` %contains% 'N' && sum(c(`dhfr_51[N]` %contains% ',', `dhfr_59[C]` %contains% ',', `dhfr_108[S]` %contains% ',')) == 0",
+               "interpretation":"Resistant/Mutant",
+               "phenotype":"Resistant",
+               "analytics":"Mutant 51I and 59R and 108N, all homozygous"
+            },
+            {
+               "name":"S-P-Treatment-3",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"Undetermined/MissingOrHetOrUnknownCombination",
+               "phenotype":"Undetermined",
+               "analytics":"Missing or unknown combination"
+            }
+         ]
+      },
+      "SP-IPTp":{
+         "rules":[
+            {
+               "name":"S-P-IPTp-1",
+               "change":"dhfr: N51 or C59 or S108 or dhps: A437 or K540 or all of dhfr:I164 + dhps:A581 + dhps:A613",
+               "evaluation":"`dhfr_51[N]` %==% 'N' || `dhfr_59[C]` %==% 'C' || `dhfr_108[S]` %==% 'S' || `dhps_437[G]` %==% 'A' || `dhps_540[K]` %==% 'K' || (`dhfr_164[I]` %==% 'I' && `dhps_581[A]` %==% 'A' && `dhps_613[A]` %==% 'A') ",
+               "interpretation":"Sensitive/NotSextupleMutant",
+               "phenotype":"Sensitive",
+               "analytics":"Not sextuple mutant (at least one allele is WT)"
+            },
+            {
+               "name":"S-P-IPTp-2",
+               "change":"dhfr: 51I + 59R + 108N + dhps: 437G + 540E + one of dhfr:164L, dhps:581G, dhps:613S or dhps:613T",
+               "evaluation":"`dhfr_51[N]` %contains% 'I' && `dhfr_59[C]` %contains% 'R' && `dhfr_108[S]` %contains% 'N' && `dhps_437[G]` %contains% 'G' && `dhps_540[K]` %contains% 'E' && (`dhfr_164[I]` %contains% 'L' || `dhps_581[A]` %contains% 'G' || `dhps_613[A]` %contains% 'S' || `dhps_613[A]` %contains% 'T') && sum(c(`dhfr_51[N]` %contains% ',', `dhfr_59[C]` %contains% ',', `dhfr_108[S]` %contains% ',', `dhps_437[G]` %contains% ',', `dhps_540[K]` %contains% ',', (`dhfr_164[I]` %contains% ',' || `dhps_581[A]` %contains% ',' || `dhps_613[A]` %contains% ','))) == 0",
+               "interpretation":"Resistant/SextupleMutant",
+               "phenotype":"Resistant",
+               "analytics":"Sextuple mutant"
+            },
+            {
+               "name":"S-P-IPTp-3",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"Undetermined/MissingOrHetOrUnknownCombination",
+               "phenotype":"Undetermined",
+               "analytics":"Missing or unknown combination"
+            }
+         ]
+      },
+      "AS-MQ":{
+         "rules":[
+            {
+               "name":"Artesunate-mefloquine-1",
+               "change":"Lack of WHO K13 mutant or single copy of mdr1",
+               "evaluation":"@Artemisinin@ %contains% 'Sensitive' || @Mefloquine@ %contains% 'Sensitive'",
+               "interpretation":"Sensitive/WTForAtLeastOneComponent",
+               "phenotype":"Sensitive",
+               "analytics":"Wild type for at least one component"
+            },
+            {
+               "name":"Artesunate-mefloquine-2",
+               "change":"WHO K13 mutant and multiple copies of mdr1",
+               "evaluation":"@Artemisinin@ %contains% 'Resistant' && @Mefloquine@ %contains% 'Resistant'",
+               "interpretation":"Resistant/Mutant",
+               "phenotype":"Resistant",
+               "analytics":"Mutant"
+            },
+            {
+               "name":"Artesunate-mefloquine-3",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"Undetermined/Unknown",
+               "phenotype":"Undetermined",
+               "analytics":"Unknown"
+            }
+         ]
+      },
+      "DHA-PPQ":{
+         "rules":[
+            {
+               "name":"Dihydroartemisinin-piperaquine-1",
+               "change":"Lack of WHO K13 mutant or single copy of pm2/3",
+               "evaluation":"@Artemisinin@ %contains% 'Sensitive' || @Piperaquine@ %contains% 'Sensitive'",
+               "interpretation":"Sensitive/WTForAtLeastOneComponent",
+               "phenotype":"Sensitive",
+               "analytics":"Wild type for at least one component"
+            },
+            {
+               "name":"Dihydroartemisinin-piperaquine-2",
+               "change":"WHO K13 mutant and multiple copies of pm2/3",
+               "evaluation":"@Artemisinin@ %contains% 'Resistant' && @Piperaquine@ %contains% 'Resistant'",
+               "interpretation":"Resistant/Mutant",
+               "phenotype":"Resistant",
+               "analytics":"Mutant"
+            },
+            {
+               "name":"Dihydroartemisinin-piperaquine-3",
+               "change":"otherwise",
+               "evaluation":"T",
+               "interpretation":"Undetermined/Unknown",
+               "phenotype":"Undetermined",
+               "analytics":"Unknown"
+            }
+         ]
+      }
+   }
+}
